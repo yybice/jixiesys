@@ -1,0 +1,46 @@
+<h1>添加联系人</h1>
+
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+  <%= f.label '所属单位' %>：<%= Customer.find(params[:id]).short_name %>
+</div>
+
+<div class="field">
+  <%= f.label '姓名' %><br/>
+  <%= f.text_field :name %>
+</div>
+  <div class="field">
+    <%= f.label '手机' %><br />
+    <%= f.text_field :cellphone %>
+  </div>
+  <div class="field">
+    <%= f.label '电话' %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label '传真' %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label '备注' %><br />
+    <%= f.text_area :remark %>
+  </div>
+<%= f.hidden_field :customer_id,:value=>params[:id] %>
+  <div class="actions">
+    <%= f.submit '提交' %>
+  </div>
+<% end %>
+
+
+<%= link_to '返回', people_path %>

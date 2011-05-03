@@ -1,0 +1,21 @@
+<h1>客户列表</h1>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>电话</th>
+    <th>传真</th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= link_to customer.short_name, customer %></td>
+    <td><%= customer.tel %></td>
+    <td><%= customer.fax %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '添加客户', new_customer_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  full_name: MyString
+  short_name: MyString
+  tel: MyString
+  fax: MyString
+  contact: MyString
+  cellphone: MyString
+
+two:
+  full_name: MyString
+  short_name: MyString
+  tel: MyString
+  fax: MyString
+  contact: MyString
+  cellphone: MyString

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>类型：</b>
+  <%= @item.subject.name %>
+</p>
+
+<p>
+  <b>名称：</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>型号：</b>
+  <%= @item.model %>
+</p>
+
+<p>
+  <b>图号：</b>
+  <%= @item.pic_num %>
+</p>
+
+<p>
+  <b>图片：</b>
+  <%= @item.pic %>
+</p>
+
+<p>
+  <b>描述：</b>
+  <%= @item.description %>
+</p>
+
+
+<%= link_to '编辑', edit_item_path(@item) %> |
+<%= link_to '删除', @item, :confirm => '确定删除么？', :method => :delete %> |
+<%= link_to '返回', subject_path(@item.subject) %>

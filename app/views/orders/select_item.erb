@@ -1,0 +1,22 @@
+<h1>商品列表</h1>
+
+<table>
+  <tr>
+    <th>类型</th>
+    <th>名称</th>
+    <th>型号</th>
+    <th></th>
+  </tr>
+
+<% Item.all.each do |item| %>
+  <tr>
+    <td><%= item.subject.name %></td>
+    <td><%= item.name %></td>
+    <td><%= item.model %></td>
+    <td><a href="#" onclick="add_to_cart(<%= item.id %>)">加入购物车</a></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '返回',orders_path %>
+<%= link_to '下一步',new_order_path %>

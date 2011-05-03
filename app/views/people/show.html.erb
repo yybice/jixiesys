@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>姓名：</b>
+  <%= @person.name %>
+</p>
+<p>
+  <b>手机：</b>
+  <%= @person.cellphone %>
+</p>
+<p>
+  <b>联系电话：</b>
+  <%= @person.tel %>
+</p>
+
+<p>
+  <b>传真：</b>
+  <%= @person.fax %>
+</p>
+
+
+<p>
+  <b>备注：</b>
+  <%= @person.remark %>
+</p>
+
+
+<%= link_to '编辑', edit_person_path(@person) %> |
+<%= link_to '删除', @person, :confirm => '确定删除么？', :method => :delete %> |
+<%= link_to '返回', customer_path(@person.customer) %>

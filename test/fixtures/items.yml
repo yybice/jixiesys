@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  subject_id: 1
+  name: MyString
+  model: MyString
+  pic: MyString
+  pic_num: MyString
+  description: MyText
+
+two:
+  subject_id: 1
+  name: MyString
+  model: MyString
+  pic: MyString
+  pic_num: MyString
+  description: MyText

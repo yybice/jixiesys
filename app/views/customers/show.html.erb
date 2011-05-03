@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>全名：</b>
+  <%= @customer.full_name %>
+</p>
+
+<p>
+  <b>简称</b>
+  <%= @customer.short_name %>
+</p>
+
+<p>
+  <b>电话：</b>
+  <%= @customer.tel %>
+</p>
+
+<p>
+  <b>传真：</b>
+  <%= @customer.fax %>
+</p>
+
+
+<%= link_to '编辑', edit_customer_path(@customer) %> |
+<%= link_to '删除', @customer, :confirm => '确定删除么？', :method => :delete %> |
+<%= link_to '添加联系人',new_people_customer_path(@customer) %> |
+<%= link_to '返回', customers_path %>
+
+<h2>联系人</h2>
+
+<% unless @customer.people.empty? %>
+  <table>
+    <tr>
+      <th>姓名</th>
+      <th>手机</th>
+      <th>电话</th>
+      <th>传真</th>
+    </tr>
+
+    <% @customer.people.each do |person| %>
+      <tr>
+        <td><%= link_to person.name, person %></td>
+        <td><%= person.cellphone %></td>
+        <td><%= person.tel %></td>
+        <td><%= person.fax %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

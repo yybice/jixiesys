@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>姓名：</b>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <b>电话：</b>
+  <%= @employee.phone %>
+</p>
+
+<p>
+  <b>身份证号：</b>
+  <%= @employee.id_num %>
+</p>
+
+<p>
+  <b>用户名：</b>
+  <%= @employee.nick_name %>
+</p>
+
+<%= link_to '编辑', edit_employee_path(@employee) %> |
+<%= link_to '删除', @employee, :confirm => '确定删除么？', :method => :delete %> |
+<%= link_to '返回', employees_path %>

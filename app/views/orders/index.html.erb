@@ -1,0 +1,23 @@
+<h1>订单列表</h1>
+
+<table>
+  <tr>
+    <th>客户</th>
+    <th>下单时间</th>
+    <th>交货时间</th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.customer.short_name %></td>
+    <td><%= order.order_at %></td>
+    <td><%= order.deadline %></td>
+    <td><%= link_to '明细', order %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '创建订单', select_item_orders_path %>

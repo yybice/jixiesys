@@ -1,0 +1,21 @@
+<h1>商品列表</h1>
+
+<table>
+  <tr>
+    <th>类型</th>
+    <th>名称</th>
+    <th>型号</th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.subject.name %></td>
+    <td><%= link_to item.name, item %></td>
+    <td><%= item.model %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '添加商品', new_item_path %>

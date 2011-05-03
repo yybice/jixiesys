@@ -1,0 +1,17 @@
+<h1>类型名称</h1>
+
+<table>
+  <tr>
+    <th>名称</th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= link_to subject.name, subject %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '添加类型', new_subject_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>名称：</b>
+  <%= @subject.name %>
+</p>
+
+<%= link_to "添加#{@subject.name}",new_item_subject_path(@subject) %> |
+<%= link_to '编辑', edit_subject_path(@subject) %> |
+<%= link_to '删除', @subject, :confirm => '确定删除么？', :method => :delete %> ｜
+<%= link_to '返回', subjects_path %>
+
+<p>
+<b>所属商品：</b><br/>
+<table>
+    <thead>
+      <td>名称</td>
+      <td>型号</td>
+    </thead>
+    <% @subject.items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= link_to item.model,item %></td>
+    </tr>
+    <% end %>
+</table>
+</p>

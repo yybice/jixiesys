@@ -1,0 +1,26 @@
+<h1>供应商列表</h1>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>联系人</th>
+    <th>手机</th>
+    <th>电话</th>
+    <th>传真</th>
+
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= link_to supplier.short_name,supplier %></td>
+    <td><%= supplier.contact %></td>
+    <td><%= supplier.cellphone %></td>
+    <td><%= supplier.tel %></td>
+    <td><%= supplier.fax %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '添加供应商', new_supplier_path %>

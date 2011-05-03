@@ -1,0 +1,45 @@
+<%= form_for(@supplier) do |f| %>
+  <% if @supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+
+      <ul>
+      <% @supplier.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label '全名' %><br />
+    <%= f.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label '简称' %><br />
+    <%= f.text_field :short_name %>
+  </div>
+  <div class="field">
+    <%= f.label '联系人' %><br />
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label '手机' %><br />
+    <%= f.text_field :cellphone %>
+  </div>
+  <div class="field">
+    <%= f.label '电话' %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label '传真' %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label '备注' %><br />
+    <%= f.text_area :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit '提交' %>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>客户：</b>
+  <%= @order.customer.short_name %>
+</p>
+
+<p>
+  <b>下单时间：</b>
+  <%= @order.order_at %>
+</p>
+
+<p>
+  <b>交货时间：</b>
+  <%= @order.deadline %>
+</p>
+
+<p>
+  <b>明细：</b>
+<table>
+  <tr>
+    <th>名称</th>
+    <th>型号</th>
+    <th>数量</th>
+    <th>单价</th>
+  </tr>
+  <% @order.order_details.each do |detail| %>
+  <tr>
+    <td><%= detail.item.name %></td>
+    <td><%= detail.item.model %></td>
+    <td><%= detail.quantity %></td>
+    <td><%= detail.unit_price %></td>
+  </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+  <b>总金额：</b>
+  <%= @order.total_sum %>
+</p>
+<p>
+  <b>是否含税：</b>
+  <%= @order.include_invoice == 0 ? '不含税' : '含税' %>
+</p>
+
+<p>
+  <b>备注：</b>
+  <%= @order.remark %>
+</p>
+
+
+<%= link_to '编辑', edit_order_path(@order) %> |
+<%= link_to '删除', @order, :confirm => '确定删除么？', :method => :delete %> ｜
+<%= link_to '返回', orders_path %>

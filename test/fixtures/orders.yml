@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customer_id: 1
+  include_invoice: false
+  ordered_at: 2011-03-24
+  deadline: 2011-03-24
+  remark: MyText
+
+two:
+  customer_id: 1
+  include_invoice: false
+  ordered_at: 2011-03-24
+  deadline: 2011-03-24
+  remark: MyText

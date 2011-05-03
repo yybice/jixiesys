@@ -1,0 +1,49 @@
+<h1>添加商品</h1>
+
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label '所属分类' %>: <%= Subject.find(params[:id]).name %><%= f.hidden_field :subject_id,:value=>params[:id] %>
+  </div>
+
+  <div class="field">
+    <%= f.label '供应商' %>:<%= select :item,:supplier_id,[['自产',0]]+Supplier.all.collect{|supplier| [supplier.short_name,supplier.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label '名称' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label '型号' %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label '图片' %><br />
+    <%= f.text_field :pic %>
+  </div>
+  <div class="field">
+    <%= f.label '图号' %><br />
+    <%= f.text_field :pic_num %>
+  </div>
+  <div class="field">
+    <%= f.label '描述' %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit '提交' %>
+  </div>
+<% end %>
+
+
+<%= link_to '返回', subject_path(params[:id]) %>

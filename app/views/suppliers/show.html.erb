@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>全名：</b>
+  <%= @supplier.full_name %>
+</p>
+<p>
+  <b>简称：</b>
+  <%= @supplier.short_name %>
+</p>
+<p>
+  <b>联系人：</b>
+  <%= @supplier.contact %>
+</p>
+
+<p>
+  <b>手机：</b>
+  <%= @supplier.cellphone %>
+</p>
+
+<p>
+  <b>电话：</b>
+  <%= @supplier.tel %>
+</p>
+
+<p>
+  <b>传真：</b>
+  <%= @supplier.fax %>
+</p>
+
+<p>
+  <b>备注：</b>
+  <%= @supplier.remark %>
+</p>
+
+
+<%= link_to '编辑', edit_supplier_path(@supplier) %> |
+<%= link_to '删除', @supplier, :confirm => '确定删除么？', :method => :delete %> |
+<%= link_to '返回', suppliers_path %>
+

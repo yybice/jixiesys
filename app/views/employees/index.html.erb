@@ -1,0 +1,21 @@
+<h1>员工列表</h1>
+
+<table>
+  <tr>
+    <th>姓名</th>
+    <th>电话</th>
+    <th>身份证号</th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= link_to employee.name, employee %></td>
+    <td><%= employee.phone %></td>
+    <td><%= employee.id_num %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '添加员工', new_employee_path %>
